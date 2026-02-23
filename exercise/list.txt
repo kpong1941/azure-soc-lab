@@ -1,0 +1,3 @@
+Password Spray
+Privilege Escalation
+NSG analysis
