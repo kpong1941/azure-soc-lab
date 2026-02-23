@@ -94,3 +94,15 @@ AzureNetworkAnalytics_CL
 - Just-in-Time VM Access is the gold standard for administrative port management in Azure, eliminating standing network access entirely
 - Virtual Network flow logs provide the network visibility layer that Sentinel needs to detect lateral movement, port scanning, and data exfiltration at the network level
 - Flow log retention periods (7-90 days) should align with organizational compliance requirements in production environments
+
+
+## Lab Note
+Virtual Network flow log data did not populate in Log Analytics or the storage account during this lab, which is a known limitation of trial Azure subscriptions. The flow log configuration was verified as correct:
+- Status: Enabled
+- Region: Australia East (matching VNet region)
+- Version: 2
+- Log Analytics workspace: SOC-Lab-Workspace
+- Microsoft.Insights and Microsoft.Network resource providers: Registered
+
+In a production environment with a paid subscription, flow log data would appear in Log Analytics within 60 minutes of configuration and could be 
+queried using AzureNetworkAnalytics_CL.
